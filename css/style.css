@@ -286,6 +286,67 @@ a:hover::after {
     50% { opacity: 1; transform: translateX(-50%) translateY(10px); }
 }
 
+/* Hero with Cover */
+.hero--with-cover {
+    flex-direction: row;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__cover {
+    flex: 0 0 auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+.hero__cover-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow:
+        0 0 60px rgba(255, 61, 0, 0.3),
+        0 25px 50px rgba(0, 0, 0, 0.8);
+    transition: var(--transition-slow);
+}
+
+.hero__cover-img:hover {
+    transform: scale(1.02);
+    box-shadow:
+        0 0 80px rgba(255, 61, 0, 0.4),
+        0 30px 60px rgba(0, 0, 0, 0.9);
+}
+
+.hero__text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero--with-cover .hero__subtitle {
+    margin-bottom: var(--space-sm);
+}
+
+.hero--with-cover .hero__author {
+    margin-top: var(--space-md);
+}
+
+@media (max-width: 900px) {
+    .hero--with-cover {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero__cover {
+        max-width: 320px;
+    }
+
+    .hero__text {
+        max-width: none;
+    }
+}
+
 /* ==========================================
    CHAPTER STYLES
    ========================================== */
