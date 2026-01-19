@@ -1,0 +1,11 @@
+# Robots.txt for Путь в АД
+# https://jetmil.github.io/road-to-hell/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://jetmil.github.io/road-to-hell/sitemap.xml
+
+# Crawl-delay (optional, be nice to crawlers)
+Crawl-delay: 1

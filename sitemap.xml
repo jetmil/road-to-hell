@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main page -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Chapter 01: Zero Trust -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/01.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 02: Echo Chamber -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/02.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 03: Cowardice -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/03.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 04: Sincerity Negativity -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/04.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 05: Philosophy Defense -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/05.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 06: That's All for Today -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/06.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 07: Test vs Reality -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/07.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 08: Never vs Always Surrender -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/08.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 09: Account as Testament -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/09.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 10: This Too Shall Pass -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/10.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 11: Triple Pass -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/11.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 12: Listen to Unsaid -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/12.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 13: When Hit Dance -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/13.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 14: Break When You Feel -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/14.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Chapter 15: Filter Not Echo -->
+    <url>
+        <loc>https://jetmil.github.io/road-to-hell/web-chapters/15.html</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
