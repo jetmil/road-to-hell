@@ -231,9 +231,14 @@ def generate_chapter_html(chapter, prev_ch, next_ch):
     <article class="chapter container">
         <header class="chapter__header burn-in">
             <span class="chapter__number">Часть {chapter["part"]}. {PART_NAMES[chapter["part"]]}</span>
-            <h1 class="chapter__title glitch" data-text="{chapter["title"]}">{chapter["title"]}</h1>
+            <h1 class="chapter__title">{chapter["title"]}</h1>
             {f'<div class="epigraph decay">{epigraph}</div>' if epigraph else ''}
         </header>
+
+        <!-- Chapter Illustration -->
+        <figure class="chapter__illustration fade-in">
+            <img src="../images/chapter_{chapter["num"]}.png" alt="{chapter["title"]}" class="chapter__img" loading="lazy">
+        </figure>
 
         <div class="chapter__content">
             {html_content}

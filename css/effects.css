@@ -9,7 +9,8 @@
 
 .glitch {
     position: relative;
-    animation: glitch-skew 4s infinite linear alternate-reverse;
+    /* Disabled to prevent scroll jitter */
+    /* animation: glitch-skew 4s infinite linear alternate-reverse; */
 }
 
 .glitch::before,
