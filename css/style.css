@@ -1,0 +1,576 @@
+/* ==========================================
+   ПУТЬ В АД — Основные стили
+   Концепция: Распад, Пустота, Тлеющий огонь
+   ========================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Courier+Prime:ital@0;1&display=swap');
+
+/* CSS Variables — Палитра */
+:root {
+    --void: #0a0a0a;
+    --void-deep: #050505;
+    --ash: #1a1a1a;
+    --ash-light: #252525;
+    --ember: #ff3d00;
+    --ember-glow: #ff6b35;
+    --ember-dark: #cc3000;
+    --smoke: #666666;
+    --smoke-light: #888888;
+    --bone: #e8e4e0;
+    --bone-dim: #b8b4b0;
+    --rust: #8b4513;
+    --rust-light: #a0522d;
+    --blood: #8b0000;
+
+    /* Typography */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Source Serif 4', serif;
+    --font-mono: 'Courier Prime', monospace;
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.6s ease;
+}
+
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base */
+html {
+    scroll-behavior: smooth;
+    font-size: 18px;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--void);
+    color: var(--bone);
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+    background: var(--ember);
+    color: var(--void);
+}
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--bone);
+}
+
+h1 {
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin-bottom: var(--space-md);
+    color: var(--ember);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--bone-dim);
+    margin-bottom: var(--space-sm);
+}
+
+p {
+    margin-bottom: var(--space-sm);
+    max-width: 65ch;
+}
+
+/* Links */
+a {
+    color: var(--ember);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+a:hover {
+    color: var(--ember-glow);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--ember);
+    transition: var(--transition-normal);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================
+   LAYOUT
+   ========================================== */
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.container-wide {
+    max-width: 1200px;
+}
+
+/* ==========================================
+   DEPTH INDICATOR — Индикатор глубины
+   ========================================== */
+
+.depth-indicator {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100vh;
+    background: var(--ash);
+    z-index: 1000;
+}
+
+.depth-indicator::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--scroll-progress, 0%);
+    background: linear-gradient(
+        to bottom,
+        var(--ember-glow),
+        var(--ember),
+        var(--ember-dark),
+        var(--blood)
+    );
+    transition: height 0.1s linear;
+    box-shadow: 0 0 10px var(--ember);
+}
+
+.depth-label {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--smoke);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    z-index: 1000;
+}
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+
+.nav-main {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: var(--space-md);
+    z-index: 1000;
+}
+
+.nav-chapters {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--ash-light);
+    margin-top: var(--space-xl);
+}
+
+.nav-link {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--smoke);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.nav-link:hover {
+    color: var(--ember);
+}
+
+.nav-link--prev::before {
+    content: '←';
+}
+
+.nav-link--next::after {
+    content: '→';
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: var(--space-xl) var(--space-md);
+}
+
+.hero__subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--smoke);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+}
+
+.hero__title {
+    margin-bottom: var(--space-md);
+}
+
+.hero__author {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--smoke-light);
+    margin-top: var(--space-lg);
+}
+
+.hero__scroll {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--smoke);
+    letter-spacing: 0.2em;
+    animation: pulse-down 2s ease-in-out infinite;
+}
+
+@keyframes pulse-down {
+    0%, 100% { opacity: 0.5; transform: translateX(-50%) translateY(0); }
+    50% { opacity: 1; transform: translateX(-50%) translateY(10px); }
+}
+
+/* ==========================================
+   CHAPTER STYLES
+   ========================================== */
+
+.chapter {
+    padding: var(--space-xl) 0;
+}
+
+.chapter__header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--ash-light);
+}
+
+.chapter__number {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--ember);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.chapter__title {
+    margin-bottom: var(--space-md);
+}
+
+/* Epigraph */
+.epigraph {
+    font-family: var(--font-mono);
+    font-style: italic;
+    color: var(--smoke-light);
+    font-size: 0.9rem;
+    max-width: 50ch;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    padding: var(--space-md);
+}
+
+.epigraph::before,
+.epigraph::after {
+    content: '"';
+    font-size: 3rem;
+    color: var(--ash-light);
+    position: absolute;
+    font-family: var(--font-body);
+    font-style: normal;
+}
+
+.epigraph::before {
+    top: -10px;
+    left: 0;
+}
+
+.epigraph::after {
+    bottom: -30px;
+    right: 0;
+}
+
+/* Content sections */
+.chapter__content {
+    padding: var(--space-lg) 0;
+}
+
+.chapter__content h2 {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--ash-light);
+}
+
+.chapter__content h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+/* Lists */
+.chapter__content ul,
+.chapter__content ol {
+    margin: var(--space-sm) 0 var(--space-md) var(--space-md);
+}
+
+.chapter__content li {
+    margin-bottom: var(--space-xs);
+    padding-left: var(--space-xs);
+}
+
+.chapter__content ul li::marker {
+    color: var(--ember);
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 3px solid var(--ember);
+    padding-left: var(--space-md);
+    margin: var(--space-md) 0;
+    color: var(--bone-dim);
+    font-style: italic;
+}
+
+/* Code/emphasis blocks */
+.highlight-box {
+    background: var(--ash);
+    border: 1px solid var(--ash-light);
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    border-radius: 2px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-md) 0;
+    font-size: 0.9rem;
+}
+
+th, td {
+    padding: var(--space-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--ash-light);
+}
+
+th {
+    font-family: var(--font-display);
+    color: var(--ember);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   FRACTURE — Разделитель-трещина
+   ========================================== */
+
+.fracture {
+    height: 60px;
+    margin: var(--space-lg) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.fracture::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--ash-light) 20%,
+        var(--smoke) 40%,
+        var(--ember) 50%,
+        var(--smoke) 60%,
+        var(--ash-light) 80%,
+        transparent 100%
+    );
+}
+
+.fracture::after {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--ember);
+    font-size: 0.6rem;
+    background: var(--void);
+    padding: 0 var(--space-sm);
+}
+
+/* ==========================================
+   TABLE OF CONTENTS — Оглавление
+   ========================================== */
+
+.toc {
+    padding: var(--space-xl) 0;
+}
+
+.toc__part {
+    margin-bottom: var(--space-lg);
+}
+
+.toc__part-title {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--smoke);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid var(--ash-light);
+}
+
+.toc__list {
+    list-style: none;
+}
+
+.toc__item {
+    margin-bottom: var(--space-xs);
+}
+
+.toc__link {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+    padding: var(--space-xs) 0;
+    color: var(--bone-dim);
+    transition: var(--transition-fast);
+}
+
+.toc__link:hover {
+    color: var(--ember);
+    padding-left: var(--space-sm);
+}
+
+.toc__link::after {
+    display: none;
+}
+
+.toc__num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--smoke);
+    min-width: 2.5rem;
+}
+
+.toc__link:hover .toc__num {
+    color: var(--ember);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.footer {
+    padding: var(--space-xl) 0;
+    text-align: center;
+    border-top: 1px solid var(--ash-light);
+    margin-top: var(--space-xl);
+}
+
+.footer__quote {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--smoke);
+    font-style: italic;
+}
+
+.footer__quote-source {
+    display: block;
+    margin-top: var(--space-xs);
+    font-style: normal;
+    color: var(--smoke-light);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 0 var(--space-sm);
+    }
+
+    .hero {
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .depth-label {
+        display: none;
+    }
+
+    .nav-chapters {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+}
